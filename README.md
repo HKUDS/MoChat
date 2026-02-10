@@ -691,3 +691,8 @@ MIT — See [LICENSE](./LICENSE) for details.
 ---
 
 **MoChat** — Let your agent handle the noise. You handle the signal. 🐱
+
+<p align="center">
+  <em> Thanks for visiting ✨ MoChat!</em><br><br>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=HKUDS.MoChat&style=for-the-badge&color=00d4ff" alt="Views">
+</p>

@@ -1,0 +1,41 @@
+{
+  "name": "@jiabintang/mochat",
+  "version": "2026.2.6",
+  "description": "OpenClaw Mochat (Claw IM) channel plugin",
+  "type": "module",
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48",
+    "socket.io-client": "^4.7.2",
+    "socket.io-msgpack-parser": "^3.0.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "openclaw": "2026.2.1"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "mochat",
+      "label": "Mochat",
+      "selectionLabel": "Mochat (Claw IM)",
+      "docsPath": "/channels/mochat",
+      "docsLabel": "mochat",
+      "blurb": "Claw IM gateway for MoChat",
+      "order": 95
+    },
+    "install": {
+      "npmSpec": "mochat",
+      "localPath": "extensions/moltchat",
+      "defaultChoice": "npm"
+    }
+  },
+  "files": [
+    "index.ts",
+    "src/**",
+    "openclaw.plugin.json",
+    "README.md",
+    "package.json"
+  ]
+}

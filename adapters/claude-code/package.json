@@ -1,0 +1,21 @@
+{
+  "name": "claudeclaw",
+  "version": "1.0.0",
+  "description": "ClaudeClaw - Claude Code adapter for MoChat",
+  "main": "mochat-client.ts",
+  "scripts": {
+    "mochat": "tsx mochat-client.ts",
+    "queue": "tsx queue-processor.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "socket.io-client": "^4.8.1",
+    "socket.io-msgpack-parser": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  }
+}

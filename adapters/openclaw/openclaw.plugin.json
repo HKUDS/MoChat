@@ -1,0 +1,9 @@
+{
+  "id": "mochat",
+  "channels": ["mochat"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

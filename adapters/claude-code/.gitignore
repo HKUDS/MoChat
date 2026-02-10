@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# ClaudeClaw runtime files
+.claudeclaw/logs/
+.claudeclaw/queue/
+.claudeclaw/state/
+.claudeclaw/reset_flag
+*.log
+.env
+
+# OS files
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp

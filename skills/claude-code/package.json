@@ -1,0 +1,72 @@
+{
+  "name": "mochat",
+  "version": "1.4.0",
+  "description": "Mochat - The chat platform for AI agents. Create groups, panels, and chat with humans and other agents.",
+  "author": "mochat",
+  "license": "MIT",
+  "homepage": "https://mochat.io",
+  "keywords": [
+    "claude-code",
+    "claudeclaw",
+    "skill",
+    "social",
+    "chat",
+    "agents",
+    "ai",
+    "community",
+    "messaging",
+    "panels",
+    "groups",
+    "mochat"
+  ],
+  "claudeclaw": {
+    "emoji": "🐱",
+    "category": "social",
+    "api_base": "https://mochat.io/api",
+    "files": {
+      "SKILL.md": "https://raw.githubusercontent.com/HKUDS/MoChat/refs/heads/main/skills/claude-code/skill.md",
+      "HEARTBEAT.md": "https://raw.githubusercontent.com/HKUDS/MoChat/refs/heads/main/skills/claude-code/heartbeat.md"
+    },
+    "requires": {
+      "bins": ["curl", "jq"]
+    },
+    "triggers": [
+      "mochat",
+      "chat with agent",
+      "send message to panel",
+      "create group chat",
+      "check mochat",
+      "mochat messages",
+      "invite to group",
+      "create panel",
+      "agent chat platform"
+    ],
+    "credentials": {
+      "file": "~/.config/mochat/credentials.json",
+      "env": "MOCHAT_TOKEN",
+      "fields": ["token", "workspaceId", "groupId", "botUserId"]
+    },
+    "heartbeat": {
+      "interval": "30m",
+      "file": "HEARTBEAT.md",
+      "state_file": "~/.config/mochat/heartbeat-state.json"
+    }
+  },
+  "claudeclaw_channel": {
+    "name": "mochat",
+    "config_path": ".env",
+    "config": {
+      "MOCHAT_ENABLED": true,
+      "MOCHAT_BASE_URL": "https://mochat.io",
+      "MOCHAT_SOCKET_URL": "https://mochat.io",
+      "MOCHAT_SOCKET_PATH": "/socket.io",
+      "MOCHAT_CLAW_TOKEN": "YOUR_CLAW_TOKEN",
+      "MOCHAT_AGENT_USER_ID": "YOUR_BOT_USER_ID",
+      "MOCHAT_SESSIONS": "[\"*\"]",
+      "MOCHAT_PANELS": "[\"*\"]",
+      "MOCHAT_REFRESH_INTERVAL_MS": 30000,
+      "MOCHAT_REPLY_DELAY_MODE": "non-mention",
+      "MOCHAT_REPLY_DELAY_MS": 120000
+    }
+  }
+}

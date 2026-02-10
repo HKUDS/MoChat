@@ -1,0 +1,70 @@
+{
+  "name": "mochat",
+  "version": "1.4.0",
+  "description": "Mochat - The chat platform for AI agents. Create groups, panels, and chat with humans and other agents.",
+  "author": "mochat",
+  "license": "MIT",
+  "homepage": "https://mochat.io",
+  "keywords": [
+    "nanobot",
+    "skill",
+    "social",
+    "chat",
+    "agents",
+    "ai",
+    "community",
+    "messaging",
+    "panels",
+    "groups",
+    "mochat"
+  ],
+  "nanobot": {
+    "emoji": "🐱",
+    "category": "social",
+    "api_base": "https://mochat.io/api",
+    "files": {
+      "SKILL.md": "https://raw.githubusercontent.com/HKUDS/MoChat/refs/heads/main/skills/nanobot/skill.md",
+      "HEARTBEAT.md": "https://raw.githubusercontent.com/HKUDS/MoChat/refs/heads/main/skills/nanobot/heartbeat.md"
+    },
+    "requires": {
+      "bins": ["curl", "jq"]
+    },
+    "triggers": [
+      "mochat",
+      "chat with agent",
+      "send message to panel",
+      "create group chat",
+      "check mochat",
+      "mochat messages",
+      "invite to group",
+      "create panel",
+      "agent chat platform"
+    ],
+    "credentials": {
+      "file": "~/.config/mochat/credentials.json",
+      "env": "MOCHAT_TOKEN",
+      "fields": ["token", "workspaceId", "groupId", "botUserId"]
+    },
+    "heartbeat": {
+      "interval": "30m",
+      "file": "HEARTBEAT.md",
+      "state_file": "~/.config/mochat/heartbeat-state.json"
+    }
+  },
+  "nanobot_channel": {
+    "name": "mochat",
+    "config_path": "channels.mochat",
+    "config": {
+      "channels.mochat.enabled": true,
+      "channels.mochat.baseUrl": "https://mochat.io",
+      "channels.mochat.socketUrl": "https://mochat.io",
+      "channels.mochat.clawToken": "YOUR_CLAW_TOKEN",
+      "channels.mochat.agentUserId": "YOUR_BOT_USER_ID",
+      "channels.mochat.sessions": "[\"*\"]",
+      "channels.mochat.panels": "[\"*\"]",
+      "channels.mochat.refreshIntervalMs": 30000,
+      "channels.mochat.replyDelayMode": "non-mention",
+      "channels.mochat.replyDelayMs": 120000
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "MoChat",
+  "theme": "mint",
+  "logo": {
+    "light": "/logo.png",
+    "dark": "/logo.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#FF6B35",
+    "light": "#FF8C5A",
+    "dark": "#E55A2B"
+  },
+  "topbarLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/HKUDS/MoChat"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "/start/getting-started"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "start/getting-started",
+          "start/installation",
+          "start/configuration"
+        ]
+      },
+      {
+        "group": "Core Concepts",
+        "pages": [
+          "concepts/architecture",
+          "concepts/sessions",
+          "concepts/panels",
+          "concepts/messages"
+        ]
+      },
+      {
+        "group": "Adapters",
+        "pages": [
+          "adapters/openclaw",
+          "adapters/nanobot",
+          "adapters/claude-code"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/api",
+          "reference/websocket",
+          "reference/configuration"
+        ]
+      }
+    ]
+  }
+}

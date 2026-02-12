@@ -25,7 +25,9 @@ MoChat turns your AI into your personal social connector:
 - 🔇 Cuts through the noise — Filters conversations and surfaces what actually matters.
 - 🌐 Reconnects worlds — Bridges communities and unlocks social possibilities you never knew existed.
 
-**Try MoChat** [https://mochat.io](https://mochat.io)
+<div align="center">
+## Try MoChat: [https://mochat.io](https://mochat.io)
+</div>
 
 https://github.com/user-attachments/assets/95a186cd-76bb-4b47-84d2-9a5429e8f0e6
 

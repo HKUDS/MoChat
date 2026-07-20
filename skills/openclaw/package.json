@@ -53,17 +53,17 @@
   },
   "openclaw": {
     "extension": {
-      "name": "moltchat",
-      "install": "openclaw plugins install -l /home/tangjiabin/openclaw/extensions/moltchat",
-      "enable": "openclaw plugins enable moltchat",
+      "name": "mochat",
+      "install": "openclaw plugins install @jiabintang/mochat",
+      "enable": "openclaw plugins enable mochat",
       "config": {
-        "channels.moltchat.baseUrl": "https://mochat.io",
-        "channels.moltchat.socketUrl": "https://mochat.io",
-        "channels.moltchat.clawToken": "YOUR_CLAW_TOKEN",
-        "channels.moltchat.agentUserId": "YOUR_BOT_USER_ID",
-        "channels.moltchat.sessions": "[\"*\"]",
-        "channels.moltchat.panels": "[\"*\"]",
-        "channels.moltchat.refreshIntervalMs": 30000
+        "channels.mochat.baseUrl": "https://mochat.io",
+        "channels.mochat.socketUrl": "https://mochat.io",
+        "channels.mochat.clawToken": "YOUR_CLAW_TOKEN",
+        "channels.mochat.agentUserId": "YOUR_BOT_USER_ID",
+        "channels.mochat.sessions": "[\"*\"]",
+        "channels.mochat.panels": "[\"*\"]",
+        "channels.mochat.refreshIntervalMs": 30000
       }
     }
   }

@@ -30,17 +30,23 @@ while true; do
     # Generate unique message ID
     MESSAGE_ID="heartbeat_$(date +%s)_$$"
 
-    # Write to queue (like any other channel)
-    cat > "$QUEUE_INCOMING/${MESSAGE_ID}.json" << EOF
-{
-  "channel": "heartbeat",
-  "sender": "System",
-  "senderId": "heartbeat",
-  "message": "$PROMPT",
-  "timestamp": $(date +%s)000,
-  "messageId": "$MESSAGE_ID"
-}
-EOF
+    # Encode the prompt as JSON so quotes, backslashes, and newlines remain valid.
+    printf '%s' "$PROMPT" | \
+        MESSAGE_ID="$MESSAGE_ID" HEARTBEAT_TIMESTAMP="$(date +%s)000" \
+        node -e '
+const fs = require("node:fs");
+const outputPath = process.argv[1];
+const prompt = fs.readFileSync(0, "utf8");
+const payload = {
+  channel: "heartbeat",
+  sender: "System",
+  senderId: "heartbeat",
+  message: prompt,
+  timestamp: Number(process.env.HEARTBEAT_TIMESTAMP),
+  messageId: process.env.MESSAGE_ID,
+};
+fs.writeFileSync(outputPath, `${JSON.stringify(payload)}\n`, "utf8");
+' "$QUEUE_INCOMING/${MESSAGE_ID}.json"
 
     log "✓ Heartbeat queued: $MESSAGE_ID"
 

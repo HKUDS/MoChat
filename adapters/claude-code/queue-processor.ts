@@ -3,6 +3,8 @@
  * Queue Processor - Handles messages from Mochat channel
  * Processes one message at a time to avoid race conditions
  */
+import { mochatRouteFromMetadata } from './queue-routing';
+
 export {};
 
 const fs = require('fs');
@@ -269,7 +271,10 @@ async function processMessage(messageFile) {
             message: response,
             originalMessage: message,
             timestamp: Date.now(),
-            messageId
+            messageId,
+            ...(channel === 'mochat'
+                ? { mochatRoute: mochatRouteFromMetadata(messageData.metadata) }
+                : {}),
         };
 
         // For heartbeat messages, write to a separate location (they handle their own responses)

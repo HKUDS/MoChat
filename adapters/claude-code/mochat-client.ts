@@ -4,6 +4,8 @@
  * - Receives Mochat events via Socket.IO and writes them to incoming queue
  * - Reads outgoing queue responses and sends them back to Mochat
  */
+import { mochatRouteFromOutgoing } from './queue-routing';
+
 export {};
 
 const fs = require('fs');
@@ -1208,7 +1210,8 @@ async function checkOutgoingQueue() {
                 const responseData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
                 const { messageId, message: responseText, sender } = responseData;
 
-                const pending = pendingMessages.get(messageId);
+                const pending = pendingMessages.get(messageId) ||
+                    (responseData.channel === 'mochat' ? mochatRouteFromOutgoing(responseData) : undefined);
                 if (!pending) {
                     log('WARN', `No pending Mochat message for ${messageId}, cleaning ${file}`);
                     fs.unlinkSync(filePath);

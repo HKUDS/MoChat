@@ -6,6 +6,7 @@
   "scripts": {
     "mochat": "tsx mochat-client.ts",
     "queue": "tsx queue-processor.ts",
+    "test": "tsx --test queue-routing.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
